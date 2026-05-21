@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma Mobcar para denúncias de infrações de trânsito, estatísticas e planos de acesso à API.">
+  <title>Mobcar - Denúncia de Infrações de Trânsito</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#inicio" data-route>Mobcar</a>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-controls="menu-principal" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="menu-principal" aria-label="Navegação principal">
+        <a href="#inicio" data-route>Início</a>
+        <a href="#projeto" data-route>Projeto</a>
+        <a href="#estatisticas" data-route>Estatísticas</a>
+        <a href="#denunciar" data-route>Denunciar</a>
+        <a href="#planos-api" data-route>Planos API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page is-active" id="inicio" data-page>
+      <div class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1>Reporte Infrações de Trânsito</h1>
+            <p>
+              Proporcionar uma plataforma acessível para que a população denuncie infrações e irregularidades no trânsito,
+              contribuindo para a melhoria da mobilidade urbana e da qualidade de vida. Juntos, podemos tornar nossas
+              ruas mais seguras para todos.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="#denunciar" data-route>Fazer Denúncia</a>
+              <a class="button secondary" href="#estatisticas" data-route>Ver Estatísticas</a>
+            </div>
+          </div>
+          <img class="hero-image" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&h=600&fit=crop" alt="Trânsito urbano" decoding="async">
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="container stat-grid">
+          <article>
+            <strong>12.543</strong>
+            <span>Denúncias Registradas</span>
+          </article>
+          <article>
+            <strong>87</strong>
+            <span>Cidades Atendidas</span>
+          </article>
+          <article>
+            <strong>94%</strong>
+            <span>Taxa de Resolução</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="section-pad">
+        <div class="container feature-grid">
+          <article class="feature-card">
+            <span class="icon warning" aria-hidden="true"></span>
+            <h2>Como Funciona</h2>
+            <p>Registre infrações de trânsito de forma rápida e segura. Envie fotos, vídeos e informações detalhadas para que as autoridades possam agir de forma eficaz.</p>
+          </article>
+          <article class="feature-card">
+            <span class="icon people" aria-hidden="true"></span>
+            <h2>Por Que Reportar</h2>
+            <p>Sua denúncia contribui para um trânsito mais seguro e organizado. Cada registro ajuda as autoridades a identificar padrões e agir preventivamente.</p>
+          </article>
+          <article class="feature-card">
+            <span class="icon shield" aria-hidden="true"></span>
+            <h2>Segurança no Trânsito</h2>
+            <p>Proteja sua identidade com a opção de denúncia anônima. Todos os dados são tratados com máxima confidencialidade e segurança.</p>
+          </article>
+          <article class="feature-card">
+            <span class="icon bolt" aria-hidden="true"></span>
+            <h2>Envio Rápido</h2>
+            <p>Interface intuitiva e processo simplificado. Faça sua denúncia em menos de 2 minutos e receba confirmação imediata do registro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="projeto" data-page>
+      <div class="container narrow section-pad">
+        <div class="page-title">
+          <h1>Sobre o Projeto Mobcar</h1>
+          <p>Conheça nossa missão, visão e valores que norteiam o desenvolvimento desta plataforma de denúncias de infrações de trânsito.</p>
+        </div>
+
+        <article class="mission-card accent-gold">
+          <span class="big-icon target" aria-hidden="true"></span>
+          <div>
+            <h2>Missão</h2>
+            <p>Proporcionar uma plataforma acessível, segura e eficiente para que a população denuncie infrações e irregularidades no trânsito, promovendo a participação cidadã na fiscalização e contribuindo ativamente para a melhoria da mobilidade urbana, redução de acidentes e aumento da qualidade de vida nas cidades brasileiras.</p>
+          </div>
+        </article>
+        <article class="mission-card accent-brown">
+          <span class="big-icon eye" aria-hidden="true"></span>
+          <div>
+            <h2>Visão</h2>
+            <p>Ser a principal plataforma de referência nacional em denúncias colaborativas de trânsito, reconhecida pela confiabilidade, transparência e efetividade na integração entre cidadãos e órgãos de fiscalização, tornando-se ferramenta essencial para a construção de cidades mais seguras e organizadas até 2030.</p>
+          </div>
+        </article>
+        <article class="mission-card accent-blue">
+          <span class="big-icon heart" aria-hidden="true"></span>
+          <div>
+            <h2>Valores</h2>
+            <ul class="clean-list">
+              <li><strong>Transparência:</strong> Dados públicos e processos claros para todas as partes envolvidas.</li>
+              <li><strong>Segurança e Privacidade:</strong> Proteção rigorosa dos dados pessoais e opção de anonimato.</li>
+              <li><strong>Cidadania Ativa:</strong> Empoderamento da população na fiscalização e melhoria do trânsito.</li>
+              <li><strong>Inovação:</strong> Uso de tecnologia para facilitar o acesso e otimizar processos.</li>
+              <li><strong>Responsabilidade Social:</strong> Compromisso com a redução de acidentes e melhoria da qualidade de vida urbana.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="dark-panel">
+          <h2>Contexto e Motivação</h2>
+          <p>O Mobcar nasceu da necessidade de criar um canal direto e eficiente entre cidadãos e órgãos de fiscalização de trânsito. Diariamente, milhares de infrações passam despercebidas, contribuindo para acidentes, congestionamentos e degradação da qualidade de vida urbana.</p>
+          <p>Acreditamos que a tecnologia pode democratizar a fiscalização, permitindo que cada cidadão se torne um agente ativo na construção de cidades mais seguras. Com dados transparentes e processos claros, buscamos criar um ecossistema colaborativo que beneficie toda a sociedade.</p>
+          <p>Através da análise de dados agregados, órgãos públicos podem identificar pontos críticos, planejar ações preventivas e implementar melhorias baseadas em evidências reais reportadas pela população.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="estatisticas" data-page>
+      <div class="container section-pad">
+        <div class="page-title">
+          <h1>Estatísticas de Denúncias</h1>
+          <p>Dados consolidados e transparentes sobre as denúncias registradas na plataforma. Todas as informações são anônimas e agregadas.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card gold">
+            <div>
+              <span>Total de Denúncias</span>
+              <strong>12.543</strong>
+            </div>
+            <span class="chart-icon trending" aria-hidden="true"></span>
+            <small>↑ 23% vs mês anterior</small>
+          </article>
+          <article class="summary-card brown">
+            <div>
+              <span>Cidades Atendidas</span>
+              <strong>87</strong>
+            </div>
+            <span class="chart-icon location" aria-hidden="true"></span>
+            <small>↑ 5 novas cidades</small>
+          </article>
+          <article class="summary-card blue">
+            <div>
+              <span>Infrações Únicas</span>
+              <strong>5</strong>
+            </div>
+            <span class="chart-icon alert" aria-hidden="true"></span>
+            <small>Categorias monitoradas</small>
+          </article>
+        </div>
+
+        <article class="card chart-card">
+          <h2>Ranking de Cidades com Mais Denúncias</h2>
+          <div class="bar-chart" aria-label="Gráfico de denúncias por cidade"></div>
+        </article>
+
+        <div class="two-col">
+          <article class="card chart-card">
+            <h2>Distribuição por Tipo de Infração</h2>
+            <div class="donut-wrap">
+              <div class="donut-chart" role="img" aria-label="Distribuição por tipo de infração"></div>
+              <div class="donut-center">12.543<br><span>denúncias</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <h2>Tipos de Infrações Mais Registradas</h2>
+            <div class="infractions-list"></div>
+          </article>
+        </div>
+
+        <article class="dark-panel">
+          <h2>Nota sobre Privacidade</h2>
+          <p>Todos os dados apresentados são agregados e anônimos. Nenhuma informação pessoal ou sensível é exibida nesta página. As estatísticas têm objetivo informativo e de transparência, demonstrando o impacto da plataforma na melhoria da mobilidade urbana.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="denunciar" data-page>
+      <div class="container narrow section-pad">
+        <div class="page-title">
+          <h1>Registrar Denúncia</h1>
+          <p>Preencha o formulário abaixo com todas as informações disponíveis sobre a infração. Quanto mais detalhes você fornecer, mais eficaz será a análise.</p>
+        </div>
+
+        <div class="success-box" hidden>
+          <div class="success-icon" aria-hidden="true"></div>
+          <h2>Denúncia Registrada!</h2>
+          <p>Sua denúncia foi recebida e será encaminhada para análise. Obrigado por contribuir para um trânsito mais seguro!</p>
+          <strong class="protocol"></strong>
+        </div>
+
+        <form class="report-form" novalidate>
+          <label class="field">
+            <span>Tipo de Infração *</span>
+            <select name="tipoInfracao" required>
+              <option value="">Selecione...</option>
+              <option>Estacionamento Irregular</option>
+              <option>Excesso de Velocidade</option>
+              <option>Avanço de Sinal Vermelho</option>
+              <option>Uso de Celular ao Volante</option>
+              <option>Circulação em Faixa Exclusiva</option>
+              <option>Outros</option>
+            </select>
+            <small class="error"></small>
+          </label>
+
+          <label class="field">
+            <span>Descrição do Ocorrido *</span>
+            <textarea name="descricao" minlength="20" required placeholder="Descreva detalhadamente o que aconteceu..."></textarea>
+            <small class="error"></small>
+          </label>
+
+          <fieldset>
+            <legend>Localização</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Endereço *</span>
+                <input name="endereco" type="text" required autocomplete="street-address" placeholder="Rua, número, bairro">
+                <small class="error"></small>
+              </label>
+              <label class="field">
+                <span>Cidade *</span>
+                <input name="cidade" type="text" required autocomplete="address-level2" placeholder="Cidade">
+                <small class="error"></small>
+              </label>
+            </div>
+            <label class="field">
+              <span>Estado *</span>
+              <select name="estado" required autocomplete="address-level1">
+                <option value="">Estado</option>
+                <option>São Paulo</option>
+                <option>Rio de Janeiro</option>
+                <option>Minas Gerais</option>
+                <option>Rio Grande do Sul</option>
+                <option>Paraná</option>
+                <option>Bahia</option>
+                <option>Santa Catarina</option>
+              </select>
+              <small class="error"></small>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Data e Hora do Ocorrido *</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Data</span>
+                <input name="data" type="date" required>
+                <small class="error"></small>
+              </label>
+              <label class="field">
+                <span>Hora</span>
+                <input name="hora" type="time" required>
+                <small class="error"></small>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="upload-box">
+            <span>Foto ou Vídeo (opcional)</span>
+            <input name="arquivo" type="file" accept="image/*,video/*">
+            <strong class="upload-title">Clique para selecionar um arquivo</strong>
+            <small class="file-name">PNG, JPG, MP4 até 10MB</small>
+          </label>
+
+          <label class="anonymous-box">
+            <input name="anonima" type="checkbox">
+            <span>Fazer denúncia anônima</span>
+            <small>Ao marcar esta opção, seus dados pessoais não serão solicitados.</small>
+          </label>
+
+          <fieldset class="personal-data">
+            <legend>Dados Pessoais (opcional)</legend>
+            <div class="field-grid">
+              <label class="field">
+                <span>Nome completo</span>
+                <input name="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
+              </label>
+              <label class="field">
+                <span>E-mail</span>
+                <input name="email" type="email" autocomplete="email" placeholder="Seu e-mail">
+                <small class="error"></small>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="submit-button" type="submit">Enviar Denúncia</button>
+        </form>
+
+        <article class="dark-panel">
+          <h2>O que acontece após o envio?</h2>
+          <ul class="clean-list light">
+            <li>Sua denúncia será analisada pela nossa equipe.</li>
+            <li>Caso aprovada, será encaminhada aos órgãos competentes.</li>
+            <li>Você receberá um número de protocolo para acompanhamento.</li>
+            <li>Todos os dados são tratados com confidencialidade.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="planos-api" data-page>
+      <div class="container section-pad">
+        <div class="page-title">
+          <h1>Planos de Acesso à API</h1>
+          <p>Integre os dados do Mobcar em sua aplicação, pesquisa ou sistema de gestão. Escolha o plano ideal para suas necessidades e comece a usar nossa API hoje mesmo.</p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plan-card">
+            <h2>Free</h2>
+            <p class="price">R$ 0<span>/mês</span></p>
+            <small>1.000 requisições/mês</small>
+            <ul>
+              <li>Acesso a dados públicos agregados</li>
+              <li>Estatísticas básicas por cidade</li>
+              <li>Limite de 1.000 requisições/mês</li>
+              <li>Suporte via documentação</li>
+              <li>Rate limit: 10 req/min</li>
+            </ul>
+            <button type="button">Começar Agora</button>
+          </article>
+          <article class="plan-card featured">
+            <span class="badge">Mais Popular</span>
+            <h2>Developer</h2>
+            <p class="price">R$ 99<span>/mês</span></p>
+            <small>50.000 requisições/mês</small>
+            <ul>
+              <li>Tudo do plano Free</li>
+              <li>Acesso a rankings detalhados</li>
+              <li>Filtros por tipo de infração</li>
+              <li>Suporte por e-mail (48h)</li>
+              <li>Webhooks para atualizações</li>
+            </ul>
+            <button type="button">Começar Agora</button>
+          </article>
+          <article class="plan-card">
+            <h2>Business</h2>
+            <p class="price">R$ 499<span>/mês</span></p>
+            <small>500.000 requisições/mês</small>
+            <ul>
+              <li>Tudo do plano Developer</li>
+              <li>Dados históricos completos</li>
+              <li>Análise preditiva (beta)</li>
+              <li>Suporte prioritário (24h)</li>
+              <li>SLA de 99.5%</li>
+            </ul>
+            <button type="button">Começar Agora</button>
+          </article>
+          <article class="plan-card">
+            <h2>Enterprise</h2>
+            <p class="price">Customizado</p>
+            <small>Ilimitado</small>
+            <ul>
+              <li>Tudo do plano Business</li>
+              <li>Requisições ilimitadas</li>
+              <li>Infraestrutura dedicada</li>
+              <li>Suporte 24/7 com SLA 99.9%</li>
+              <li>Integração personalizada</li>
+            </ul>
+            <button type="button">Fale Conosco</button>
+          </article>
+        </div>
+
+        <article class="card comparison">
+          <h2>Comparação Detalhada</h2>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Recurso</th>
+                  <th>Free</th>
+                  <th>Developer</th>
+                  <th>Business</th>
+                  <th>Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Requisições/mês</td><td>1.000</td><td>50.000</td><td>500.000</td><td>Ilimitado</td></tr>
+                <tr><td>Rate Limit</td><td>10/min</td><td>100/min</td><td>500/min</td><td>Custom</td></tr>
+                <tr><td>Dados Históricos</td><td>30 dias</td><td>6 meses</td><td>Completo</td><td>Completo</td></tr>
+                <tr><td>Webhooks</td><td>-</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+                <tr><td>SLA</td><td>-</td><td>-</td><td>99.5%</td><td>99.9%</td></tr>
+                <tr><td>Suporte</td><td>Docs</td><td>E-mail 48h</td><td>Priority 24h</td><td>24/7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="two-col">
+          <article class="dark-panel">
+            <h2>Documentação da API</h2>
+            <p>Nossa API REST é completa, bem documentada e fácil de usar. Acesse endpoints para consultar estatísticas, rankings, dados de infrações e muito mais.</p>
+            <button class="panel-button" type="button">Acessar Documentação</button>
+          </article>
+          <article class="card">
+            <h2>Casos de Uso</h2>
+            <ul class="clean-list">
+              <li>Integração com sistemas de gestão municipal.</li>
+              <li>Pesquisas acadêmicas sobre mobilidade urbana.</li>
+              <li>Aplicativos de navegação e alertas.</li>
+              <li>Dashboards de análise de dados.</li>
+              <li>Jornalismo de dados e reportagens.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="cta-panel">
+          <h2>Ainda tem dúvidas?</h2>
+          <p>Entre em contato com nossa equipe comercial para entender qual plano melhor atende suas necessidades ou para solicitar um trial gratuito de 30 dias.</p>
+          <button type="button">Falar com Especialista</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mobcar - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
