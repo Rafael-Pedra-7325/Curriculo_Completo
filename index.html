@@ -1,117 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rafael Pedra | Neural Engineer</title>
+  <title>Rafael Pedra | AI Software Engineer</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- GOOGLE FONTS -->
-
-  <link rel="preconnect"
-  href="https://fonts.googleapis.com">
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap"
-  rel="stylesheet">
-
-  <!-- THREE JS -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- GSAP -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-  <!-- PARTICLES -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
 
-  <!-- MATRIX -->
+  <!-- LOADER -->
 
-  <canvas id="matrix"></canvas>
+  <div id="loader">
 
-  <!-- GALAXY -->
+    <div class="cyber-loader"></div>
 
-  <canvas id="galaxy"></canvas>
+    <h1>INITIALIZING RAFAEL SYSTEM...</h1>
 
-  <!-- CURSOR -->
+  </div>
 
-  <div class="cursor"></div>
+  <!-- 3D CANVAS -->
 
-  <!-- GLOW -->
+  <canvas id="bg"></canvas>
 
-  <div class="mouse-glow"></div>
+  <!-- PARTICLES -->
+
+  <div id="particles-js"></div>
 
   <!-- AUDIO -->
 
-  <audio id="bg-audio" loop autoplay>
+  <audio autoplay loop>
 
-    <source src="assets/ambient.mp3"
-    type="audio/mp3">
+    <source src="assets/audio/cyberpunk.mp3">
 
   </audio>
 
-  <!-- HEADER -->
+  <!-- NAVBAR -->
 
   <header>
 
     <div class="logo">
-      RAFAEL<span>PEDRA</span>
+
+      Rafael<span>Pedra</span>
+
     </div>
 
     <nav>
 
-      <a href="#hero">HOME</a>
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
       <a href="#skills">SKILLS</a>
-      <a href="#projects">PROJECTS</a>
       <a href="#timeline">TIMELINE</a>
-      <a href="#dashboard">DASHBOARD</a>
+      <a href="#github">GITHUB</a>
       <a href="#blog">BLOG</a>
+      <a href="#dashboard">DASHBOARD</a>
+      <a href="#contact">CONTACT</a>
 
     </nav>
+
+    <div class="controls">
+
+      <button id="theme-btn">🌙</button>
+
+      <button id="lang-btn">PT/EN</button>
+
+    </div>
 
   </header>
 
   <!-- HERO -->
 
-  <section class="hero" id="hero">
+  <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <h3 class="neon">
+      <h3 class="glow-text">
         FULL STACK • AI • CYBERSECURITY
       </h3>
 
       <h1>
+
         RAFAEL
         <span>PEDRA</span>
+
       </h1>
 
       <p>
 
-        Futuristic developer focused on
-        Artificial Intelligence, immersive interfaces,
-        data systems and innovation.
+        Computer Science student focused on
+        futuristic systems, Artificial Intelligence,
+        immersive experiences and scalable software.
 
       </p>
 
-      <div class="buttons">
+      <div class="hero-buttons">
 
-        <button class="primary-btn">
-          ENTER SYSTEM
+        <button class="primary">
+          EXPLORE
         </button>
 
-        <button class="secondary-btn">
+        <button class="secondary">
           DOWNLOAD CV
         </button>
 
@@ -119,9 +121,7 @@
 
     </div>
 
-    <!-- HOLOGRAM -->
-
-    <div class="avatar-container">
+    <div class="hero-image">
 
       <div class="hologram">
 
@@ -139,34 +139,42 @@
 
     <h2>3D CAREER TIMELINE</h2>
 
-    <div class="timeline3d">
+    <div class="timeline-container">
 
       <div class="timeline-card">
 
-        <h3>2024</h3>
+        <span>2024</span>
+
+        <h3>Freelance Developer</h3>
 
         <p>
-          Independent Full Stack Developer
+          Full Stack projects using HTML, CSS,
+          JavaScript and Python.
         </p>
 
       </div>
 
       <div class="timeline-card">
 
-        <h3>2025</h3>
+        <span>2025</span>
+
+        <h3>Vivo - Telefônica Brasil</h3>
 
         <p>
-          Vivo Technology Team
+          Corporate technology environment,
+          technical support and IT processes.
         </p>
 
       </div>
 
       <div class="timeline-card">
 
-        <h3>2026+</h3>
+        <span>2026</span>
+
+        <h3>AI & Enterprise Systems</h3>
 
         <p>
-          AI & Cybersecurity Expansion
+          Advanced futuristic systems and immersive interfaces.
         </p>
 
       </div>
@@ -175,45 +183,55 @@
 
   </section>
 
-  <!-- DASHBOARD -->
+  <!-- GITHUB API -->
 
-  <section class="dashboard" id="dashboard">
+  <section class="github-section" id="github">
 
-    <h2>LIVE GITHUB DASHBOARD</h2>
+    <h2>LIVE GITHUB DATA</h2>
 
-    <div class="dashboard-grid">
+    <div class="github-grid">
 
-      <div class="dashboard-card">
+      <div class="github-card">
 
         <h3>Repositories</h3>
 
-        <span id="repos">0</span>
+        <span id="repo-count">0</span>
 
       </div>
 
-      <div class="dashboard-card">
+      <div class="github-card">
 
         <h3>Followers</h3>
 
-        <span id="followers">0</span>
+        <span id="followers-count">0</span>
 
       </div>
 
-      <div class="dashboard-card">
+      <div class="github-card">
 
         <h3>Commits</h3>
 
-        <span id="commits">0</span>
+        <span id="commit-count">0</span>
 
       </div>
 
     </div>
+
+  </section>
+
+  <!-- ANALYTICS -->
+
+  <section class="analytics-section">
+
+    <h2>PERFORMANCE ANALYTICS</h2>
+
+    <canvas id="analyticsChart"></canvas>
 
   </section>
 
   <!-- BLOG -->
 
-  <section class="blog" id="blog">
+  <section class="blog-section" id="blog">
 
     <h2>TECH BLOG</h2>
 
@@ -224,7 +242,7 @@
         <h3>Artificial Intelligence</h3>
 
         <p>
-          Future of intelligent systems.
+          Future of AI and machine learning systems.
         </p>
 
       </div>
@@ -234,7 +252,17 @@
         <h3>Cybersecurity</h3>
 
         <p>
-          Digital protection strategies.
+          Modern cybersecurity concepts and technologies.
+        </p>
+
+      </div>
+
+      <div class="blog-card">
+
+        <h3>Full Stack Systems</h3>
+
+        <p>
+          Scalable modern architectures.
         </p>
 
       </div>
@@ -243,17 +271,74 @@
 
   </section>
 
-  <!-- METAVERSE -->
+  <!-- CMS ADMIN -->
 
-  <section class="metaverse">
+  <section class="cms-section">
 
-    <h2>CYBERPUNK CITY</h2>
+    <h2>ADMIN CMS</h2>
 
-    <div id="city3d"></div>
+    <div class="cms-panel">
+
+      <input type="text" placeholder="New Blog Title">
+
+      <textarea placeholder="Write content..."></textarea>
+
+      <button>
+        PUBLISH POST
+      </button>
+
+    </div>
 
   </section>
 
-  <script src="app.js"></script>
+  <!-- TERMINAL -->
+
+  <section class="terminal-section">
+
+    <div class="terminal">
+
+      <div class="terminal-header">
+        SYSTEM TERMINAL
+      </div>
+
+      <div class="terminal-body">
+
+        > Initializing AI modules... <br>
+        > Connecting GitHub API... <br>
+        > Analytics online... <br>
+        > CMS connected... <br>
+        > Portfolio status: ONLINE
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact-section" id="contact">
+
+    <h2>CONTACT</h2>
+
+    <form>
+
+      <input type="text" placeholder="Name">
+
+      <input type="email" placeholder="Email">
+
+      <textarea placeholder="Message"></textarea>
+
+      <button>
+        SEND MESSAGE
+      </button>
+
+    </form>
+
+  </section>
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>
