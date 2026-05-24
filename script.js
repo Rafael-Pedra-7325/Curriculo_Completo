@@ -1,56 +1,46 @@
-// 1. Menu Mobile Toggle (Responsividade)
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+const typing = document.querySelector(".typing");
 
-    burger.addEventListener('click', () => {
-        // Alterna a classe de ativação no menu
-        nav.classList.toggle('nav-active');
+const words = [
+  "Software Engineer",
+  "Full Stack Developer",
+  "Computer Science Student",
+  "AI Enthusiast",
+  "Tech Innovator"
+];
 
-        // Animação do ícone do hambúrguer (transforma em X)
-        burger.classList.toggle('toggle');
-    });
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-    // Fecha o menu ao clicar em um link (útil para celulares)
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('nav-active')) {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-            }
-        });
-    });
+function typeEffect() {
+
+  const currentWord = words[wordIndex];
+
+  if(!deleting){
+    typing.textContent = currentWord.substring(0,charIndex++);
+  } else {
+    typing.textContent = currentWord.substring(0,charIndex--);
+  }
+
+  if(charIndex === currentWord.length + 1){
+    deleting = true;
+    setTimeout(typeEffect,1000);
+    return;
+  }
+
+  if(charIndex === 0){
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+
+  setTimeout(typeEffect, deleting ? 50 : 100);
 }
 
-// 2. Animação de Fade-in ao Rolar a Página (Intersection Observer)
-const scrollAppear = () => {
-    const elements = document.querySelectorAll('.fade-in');
-    
-    // Opções do observador
-    const appearOptions = {
-        threshold: 0.15, // Aciona quando 15% do elemento estiver visível
-        rootMargin: "0px 0px -50px 0px"
-    };
+typeEffect();
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('appear');
-                appearOnScroll.unobserve(entry.target); // Para de observar depois que já apareceu
-            }
-        });
-    }, appearOptions);
+const cursor = document.querySelector(".cursor");
 
-    elements.forEach(element => {
-        appearOnScroll.observe(element);
-    });
-}
-
-// Executar funções após o carregamento da página
-document.addEventListener('DOMContentLoaded', () => {
-    navSlide();
-    scrollAppear();
+document.addEventListener("mousemove",(e)=>{
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
 });
