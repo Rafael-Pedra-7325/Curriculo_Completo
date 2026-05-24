@@ -1,46 +1,130 @@
-const typing = document.querySelector(".typing");
+// LOADER
 
-const words = [
-  "Software Engineer",
-  "Full Stack Developer",
-  "Computer Science Student",
-  "AI Enthusiast",
-  "Tech Innovator"
-];
+window.addEventListener("load",()=>{
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+  setTimeout(()=>{
 
-function typeEffect() {
+    document.getElementById("loader").style.display="none";
 
-  const currentWord = words[wordIndex];
+  },2500);
 
-  if(!deleting){
-    typing.textContent = currentWord.substring(0,charIndex++);
-  } else {
-    typing.textContent = currentWord.substring(0,charIndex--);
-  }
+});
 
-  if(charIndex === currentWord.length + 1){
-    deleting = true;
-    setTimeout(typeEffect,1000);
-    return;
-  }
+// THEME
 
-  if(charIndex === 0){
-    deleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-  }
+const themeBtn = document.getElementById("theme-toggle");
 
-  setTimeout(typeEffect, deleting ? 50 : 100);
+themeBtn.onclick = ()=>{
+
+  document.body.classList.toggle("light-mode");
+
+};
+
+// THREE JS
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth/window.innerHeight,
+  0.1,
+  1000
+);
+
+const renderer = new THREE.WebGLRenderer({
+  canvas:document.querySelector('#bg'),
+  alpha:true
+});
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+camera.position.z = 30;
+
+// GEOMETRY
+
+const geometry = new THREE.TorusGeometry(10,3,16,100);
+
+const material = new THREE.MeshStandardMaterial({
+  color:0x00ffff,
+  wireframe:true
+});
+
+const torus = new THREE.Mesh(geometry,material);
+
+scene.add(torus);
+
+const pointLight = new THREE.PointLight(0xffffff);
+
+pointLight.position.set(20,20,20);
+
+scene.add(pointLight);
+
+function animate(){
+
+  requestAnimationFrame(animate);
+
+  torus.rotation.x += 0.01;
+  torus.rotation.y += 0.005;
+
+  renderer.render(scene,camera);
+
 }
 
-typeEffect();
+animate();
 
-const cursor = document.querySelector(".cursor");
+// PARTICLES
 
-document.addEventListener("mousemove",(e)=>{
-  cursor.style.left = e.pageX + "px";
-  cursor.style.top = e.pageY + "px";
+tsParticles.load("particles-js",{
+
+  particles:{
+    number:{
+      value:120
+    },
+
+    color:{
+      value:["#00ffff","#ff00ff","#ffffff"]
+    },
+
+    links:{
+      enable:true,
+      color:"#00ffff"
+    },
+
+    move:{
+      enable:true,
+      speed:2
+    }
+  }
+
+});
+
+// TRANSLATION
+
+let currentLang = "en";
+
+document.getElementById("lang-toggle")
+.addEventListener("click",()=>{
+
+  currentLang = currentLang === "en" ? "pt" : "en";
+
+  // sistema de tradução futuramente
+
+});
+
+// SCROLL EFFECT
+
+window.addEventListener("scroll",()=>{
+
+  document.querySelectorAll(".card").forEach(card=>{
+
+    const top = card.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+
+      card.classList.add("show");
+
+    }
+
+  });
+
 });
