@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rafael Pedra | AI Engineer</title>
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Rafael Pedra | Neural Engineer</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- GOOGLE FONTS -->
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  >
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap"
+  rel="stylesheet">
+
+  <!-- THREE JS -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- PARTICLES -->
 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
@@ -24,55 +36,61 @@
 
 <body>
 
-  <!-- LOADER -->
-  <div id="loader">
+  <!-- MATRIX -->
 
-    <div class="loader-ring"></div>
+  <canvas id="matrix"></canvas>
 
-    <h1>INITIALIZING SYSTEM...</h1>
+  <!-- GALAXY -->
 
-  </div>
+  <canvas id="galaxy"></canvas>
 
-  <!-- BACKGROUND 3D -->
-  <canvas id="bg"></canvas>
+  <!-- CURSOR -->
 
-  <!-- PARTICLES -->
-  <div id="particles-js"></div>
+  <div class="cursor"></div>
 
-  <!-- NAVBAR -->
+  <!-- GLOW -->
+
+  <div class="mouse-glow"></div>
+
+  <!-- AUDIO -->
+
+  <audio id="bg-audio" loop autoplay>
+
+    <source src="assets/ambient.mp3"
+    type="audio/mp3">
+
+  </audio>
+
+  <!-- HEADER -->
+
   <header>
 
     <div class="logo">
-      Rafael<span>Pedra</span>
+      RAFAEL<span>PEDRA</span>
     </div>
 
     <nav>
 
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
+      <a href="#hero">HOME</a>
       <a href="#skills">SKILLS</a>
       <a href="#projects">PROJECTS</a>
+      <a href="#timeline">TIMELINE</a>
       <a href="#dashboard">DASHBOARD</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#blog">BLOG</a>
 
     </nav>
-
-    <div class="actions">
-
-      <button id="theme-toggle">🌙</button>
-
-      <button id="lang-toggle">PT/EN</button>
-
-    </div>
 
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home">
 
-    <div class="hero-left">
+  <section class="hero" id="hero">
 
-      <h3 class="glow">FULL STACK • AI • SOFTWARE ENGINEER</h3>
+    <div class="hero-content">
+
+      <h3 class="neon">
+        FULL STACK • AI • CYBERSECURITY
+      </h3>
 
       <h1>
         RAFAEL
@@ -80,15 +98,17 @@
       </h1>
 
       <p>
-        Futuristic developer passionate about
-        Artificial Intelligence, Cybersecurity,
-        Data, Full Stack Systems and innovation.
+
+        Futuristic developer focused on
+        Artificial Intelligence, immersive interfaces,
+        data systems and innovation.
+
       </p>
 
       <div class="buttons">
 
         <button class="primary-btn">
-          EXPLORE
+          ENTER SYSTEM
         </button>
 
         <button class="secondary-btn">
@@ -99,9 +119,11 @@
 
     </div>
 
-    <div class="hero-right">
+    <!-- HOLOGRAM -->
 
-      <div class="hologram-card">
+    <div class="avatar-container">
+
+      <div class="hologram">
 
         <img src="assets/profile.png">
 
@@ -111,85 +133,42 @@
 
   </section>
 
-  <!-- ABOUT -->
-  <section class="glass section" id="about">
+  <!-- TIMELINE 3D -->
 
-    <h2>ABOUT ME</h2>
+  <section class="timeline-section" id="timeline">
 
-    <div class="cards">
+    <h2>3D CAREER TIMELINE</h2>
 
-      <div class="card neon">
+    <div class="timeline3d">
 
-        <h3>AI & Machine Learning</h3>
+      <div class="timeline-card">
+
+        <h3>2024</h3>
 
         <p>
-          Strong interest in Artificial Intelligence,
-          automation and smart systems.
+          Independent Full Stack Developer
         </p>
 
       </div>
 
-      <div class="card neon">
+      <div class="timeline-card">
 
-        <h3>Full Stack Engineering</h3>
+        <h3>2025</h3>
 
         <p>
-          Modern web development with futuristic interfaces.
+          Vivo Technology Team
         </p>
 
       </div>
 
-      <div class="card neon">
+      <div class="timeline-card">
 
-        <h3>Cyberpunk UI/UX</h3>
+        <h3>2026+</h3>
 
         <p>
-          Advanced futuristic interfaces focused on immersive experience.
+          AI & Cybersecurity Expansion
         </p>
 
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SKILLS -->
-  <section class="skills section" id="skills">
-
-    <h2>TECH STACK</h2>
-
-    <div class="skills-grid">
-
-      <div class="skill">
-        <span>HTML5</span>
-      </div>
-
-      <div class="skill">
-        <span>CSS3</span>
-      </div>
-
-      <div class="skill">
-        <span>JavaScript</span>
-      </div>
-
-      <div class="skill">
-        <span>Python</span>
-      </div>
-
-      <div class="skill">
-        <span>SQL</span>
-      </div>
-
-      <div class="skill">
-        <span>AI</span>
-      </div>
-
-      <div class="skill">
-        <span>Power BI</span>
-      </div>
-
-      <div class="skill">
-        <span>Linux</span>
       </div>
 
     </div>
@@ -197,33 +176,34 @@
   </section>
 
   <!-- DASHBOARD -->
-  <section class="dashboard section" id="dashboard">
 
-    <h2>REALTIME DASHBOARD</h2>
+  <section class="dashboard" id="dashboard">
+
+    <h2>LIVE GITHUB DASHBOARD</h2>
 
     <div class="dashboard-grid">
 
       <div class="dashboard-card">
 
-        <h3>Projects</h3>
+        <h3>Repositories</h3>
 
-        <span>15+</span>
-
-      </div>
-
-      <div class="dashboard-card">
-
-        <h3>Technologies</h3>
-
-        <span>20+</span>
+        <span id="repos">0</span>
 
       </div>
 
       <div class="dashboard-card">
 
-        <h3>Experience</h3>
+        <h3>Followers</h3>
 
-        <span>2024 - NOW</span>
+        <span id="followers">0</span>
+
+      </div>
+
+      <div class="dashboard-card">
+
+        <h3>Commits</h3>
+
+        <span id="commits">0</span>
 
       </div>
 
@@ -231,21 +211,31 @@
 
   </section>
 
-  <!-- TERMINAL -->
-  <section class="terminal-section">
+  <!-- BLOG -->
 
-    <div class="terminal">
+  <section class="blog" id="blog">
 
-      <div class="terminal-header">
-        SYSTEM TERMINAL
+    <h2>TECH BLOG</h2>
+
+    <div class="blog-grid">
+
+      <div class="blog-card">
+
+        <h3>Artificial Intelligence</h3>
+
+        <p>
+          Future of intelligent systems.
+        </p>
+
       </div>
 
-      <div class="terminal-body">
+      <div class="blog-card">
 
-        > Initializing RafaelOS... <br>
-        > Loading AI modules... <br>
-        > Cybersecurity enabled... <br>
-        > Portfolio status: ONLINE
+        <h3>Cybersecurity</h3>
+
+        <p>
+          Digital protection strategies.
+        </p>
 
       </div>
 
@@ -253,28 +243,17 @@
 
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
+  <!-- METAVERSE -->
 
-    <h2>CONTACT</h2>
+  <section class="metaverse">
 
-    <form>
+    <h2>CYBERPUNK CITY</h2>
 
-      <input type="text" placeholder="Name">
-
-      <input type="email" placeholder="Email">
-
-      <textarea placeholder="Message"></textarea>
-
-      <button>
-        SEND MESSAGE
-      </button>
-
-    </form>
+    <div id="city3d"></div>
 
   </section>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
