@@ -1,223 +1,278 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rafael Pedra | Software Engineer</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rafael Pedra | AI Engineer</title>
 
   <link rel="stylesheet" href="style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap"
     rel="stylesheet"
-  />
+  >
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 </head>
+
 <body>
 
-  <div class="cursor"></div>
+  <!-- LOADER -->
+  <div id="loader">
 
-  <header class="header">
-    <a href="#" class="logo">Rafael<span>Pedra</span></a>
+    <div class="loader-ring"></div>
 
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">Sobre</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experiência</a>
-      <a href="#projects">Projetos</a>
-      <a href="#contact">Contato</a>
+    <h1>INITIALIZING SYSTEM...</h1>
+
+  </div>
+
+  <!-- BACKGROUND 3D -->
+  <canvas id="bg"></canvas>
+
+  <!-- PARTICLES -->
+  <div id="particles-js"></div>
+
+  <!-- NAVBAR -->
+  <header>
+
+    <div class="logo">
+      Rafael<span>Pedra</span>
+    </div>
+
+    <nav>
+
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#dashboard">DASHBOARD</a>
+      <a href="#contact">CONTACT</a>
+
     </nav>
+
+    <div class="actions">
+
+      <button id="theme-toggle">🌙</button>
+
+      <button id="lang-toggle">PT/EN</button>
+
+    </div>
+
   </header>
 
-  <section class="home" id="home">
-    <div class="home-content">
-      <h3>Olá, eu sou</h3>
-      <h1>Rafael Pedra</h1>
-      <h3><span class="typing"></span></h3>
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-left">
+
+      <h3 class="glow">FULL STACK • AI • SOFTWARE ENGINEER</h3>
+
+      <h1>
+        RAFAEL
+        <span>PEDRA</span>
+      </h1>
 
       <p>
-        Estudante de Ciência da Computação apaixonado por tecnologia,
-        desenvolvimento Full Stack, Inteligência Artificial e inovação digital.
+        Futuristic developer passionate about
+        Artificial Intelligence, Cybersecurity,
+        Data, Full Stack Systems and innovation.
       </p>
 
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+      <div class="buttons">
+
+        <button class="primary-btn">
+          EXPLORE
+        </button>
+
+        <button class="secondary-btn">
+          DOWNLOAD CV
+        </button>
+
       </div>
 
-      <a href="#contact" class="btn">Entrar em Contato</a>
     </div>
 
-    <div class="home-img">
-      <img src="assets/profile.png" alt="">
+    <div class="hero-right">
+
+      <div class="hologram-card">
+
+        <img src="assets/profile.png">
+
+      </div>
+
     </div>
+
   </section>
 
-  <section class="about" id="about">
+  <!-- ABOUT -->
+  <section class="glass section" id="about">
 
-    <h2 class="heading">Sobre <span>Mim</span></h2>
+    <h2>ABOUT ME</h2>
 
-    <div class="about-container">
+    <div class="cards">
 
-      <div class="about-box">
-        <i class="fas fa-brain"></i>
-        <h3>Pensamento Analítico</h3>
+      <div class="card neon">
+
+        <h3>AI & Machine Learning</h3>
+
         <p>
-          Forte capacidade lógica, resolução de problemas complexos
-          e tomada de decisão baseada em dados.
+          Strong interest in Artificial Intelligence,
+          automation and smart systems.
         </p>
+
       </div>
 
-      <div class="about-box">
-        <i class="fas fa-code"></i>
-        <h3>Desenvolvimento Full Stack</h3>
+      <div class="card neon">
+
+        <h3>Full Stack Engineering</h3>
+
         <p>
-          Experiência com Front-end moderno, Back-end,
-          APIs, banco de dados e desenvolvimento responsivo.
+          Modern web development with futuristic interfaces.
         </p>
+
       </div>
 
-      <div class="about-box">
-        <i class="fas fa-robot"></i>
-        <h3>Inteligência Artificial</h3>
+      <div class="card neon">
+
+        <h3>Cyberpunk UI/UX</h3>
+
         <p>
-          Interesse em Machine Learning, IA, algoritmos de busca
-          e inovação tecnológica.
+          Advanced futuristic interfaces focused on immersive experience.
         </p>
+
       </div>
 
     </div>
 
   </section>
 
-  <section class="skills" id="skills">
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
 
-    <h2 class="heading">Minhas <span>Skills</span></h2>
+    <h2>TECH STACK</h2>
 
-    <div class="skills-container">
+    <div class="skills-grid">
 
-      <div class="skill-card">
-        <i class="fab fa-html5"></i>
-        <h3>HTML5</h3>
+      <div class="skill">
+        <span>HTML5</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fab fa-css3-alt"></i>
-        <h3>CSS3</h3>
+      <div class="skill">
+        <span>CSS3</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fab fa-js"></i>
-        <h3>JavaScript</h3>
+      <div class="skill">
+        <span>JavaScript</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fab fa-python"></i>
-        <h3>Python</h3>
+      <div class="skill">
+        <span>Python</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fas fa-database"></i>
-        <h3>SQL</h3>
+      <div class="skill">
+        <span>SQL</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fab fa-java"></i>
-        <h3>Java</h3>
+      <div class="skill">
+        <span>AI</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fab fa-github"></i>
-        <h3>GitHub</h3>
+      <div class="skill">
+        <span>Power BI</span>
       </div>
 
-      <div class="skill-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Power BI</h3>
+      <div class="skill">
+        <span>Linux</span>
       </div>
 
     </div>
 
   </section>
 
-  <section class="experience" id="experience">
+  <!-- DASHBOARD -->
+  <section class="dashboard section" id="dashboard">
 
-    <h2 class="heading">Experiências</h2>
+    <h2>REALTIME DASHBOARD</h2>
 
-    <div class="timeline">
+    <div class="dashboard-grid">
 
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Programador Independente</h3>
-          <span>2024 - Atual</span>
-          <p>
-            Desenvolvimento Full Stack com HTML, CSS,
-            JavaScript, Python e Java.
-          </p>
-        </div>
+      <div class="dashboard-card">
+
+        <h3>Projects</h3>
+
+        <span>15+</span>
+
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Vivo (Telefônica Brasil)</h3>
-          <span>2025 - Atual</span>
-          <p>
-            Atuação em ambiente corporativo estruturado,
-            suporte técnico e rotinas de tecnologia.
-          </p>
-        </div>
+      <div class="dashboard-card">
+
+        <h3>Technologies</h3>
+
+        <span>20+</span>
+
       </div>
 
-    </div>
+      <div class="dashboard-card">
 
-  </section>
+        <h3>Experience</h3>
 
-  <section class="projects" id="projects">
+        <span>2024 - NOW</span>
 
-    <h2 class="heading">Projetos</h2>
-
-    <div class="projects-container">
-
-      <div class="project-card">
-        <h3>Sistema CRUD</h3>
-        <p>Projeto completo utilizando Python + SQLite.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Dashboard Power BI</h3>
-        <p>Análise estratégica e visualização de dados.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Website Responsivo</h3>
-        <p>Desenvolvimento moderno focado em UX/UI.</p>
       </div>
 
     </div>
 
   </section>
 
-  <section class="contact" id="contact">
+  <!-- TERMINAL -->
+  <section class="terminal-section">
 
-    <h2 class="heading">Contato</h2>
+    <div class="terminal">
+
+      <div class="terminal-header">
+        SYSTEM TERMINAL
+      </div>
+
+      <div class="terminal-body">
+
+        > Initializing RafaelOS... <br>
+        > Loading AI modules... <br>
+        > Cybersecurity enabled... <br>
+        > Portfolio status: ONLINE
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+
+    <h2>CONTACT</h2>
 
     <form>
 
-      <input type="text" placeholder="Seu Nome">
-      <input type="email" placeholder="Seu Email">
-      <textarea placeholder="Sua Mensagem"></textarea>
+      <input type="text" placeholder="Name">
 
-      <button class="btn">Enviar</button>
+      <input type="email" placeholder="Email">
+
+      <textarea placeholder="Message"></textarea>
+
+      <button>
+        SEND MESSAGE
+      </button>
 
     </form>
 
   </section>
-
-  <footer class="footer">
-    <p>© 2026 Rafael Pedra | Todos os direitos reservados.</p>
-  </footer>
 
   <script src="script.js"></script>
 
