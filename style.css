@@ -1,232 +1,96 @@
-:root{
-
-  --cyan:#00ffff;
-  --magenta:#ff00ff;
-  --dark:#02030a;
-  --glass:rgba(255,255,255,0.05);
-
-}
-
-*{
-
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-
-}
-
 body{
 
-  background:var(--dark);
+  background:#050816;
   color:white;
   font-family:'Poppins',sans-serif;
   overflow-x:hidden;
 
 }
 
-/* MATRIX */
+/* CYBERPUNK GRID */
 
-#matrix{
+body::before{
+
+  content:'';
 
   position:fixed;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
+
+  background:
+  linear-gradient(
+    rgba(0,255,255,0.05) 1px,
+    transparent 1px
+  ),
+
+  linear-gradient(
+    90deg,
+    rgba(255,0,255,0.05) 1px,
+    transparent 1px
+  );
+
+  background-size:50px 50px;
+
   z-index:-5;
 
 }
 
-/* GALAXY */
+/* GLASSMORPHISM */
 
-#galaxy{
+.timeline-card,
+.github-card,
+.blog-card,
+.cms-panel{
 
-  position:fixed;
-  width:100%;
-  height:100%;
-  z-index:-4;
-
-}
-
-/* CURSOR */
-
-.cursor{
-
-  width:20px;
-  height:20px;
-  border:2px solid cyan;
-  border-radius:50%;
-  position:fixed;
-  pointer-events:none;
-  z-index:99999;
-  transition:0.1s;
-
-}
-
-.mouse-glow{
-
-  position:fixed;
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  background:radial-gradient(
-    circle,
-    rgba(0,255,255,0.2),
-    transparent
-  );
-
-  pointer-events:none;
-  z-index:-1;
-
-}
-
-/* HEADER */
-
-header{
-
-  position:fixed;
-  width:100%;
-  padding:20px 10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  backdrop-filter:blur(20px);
-
-  background:rgba(0,0,0,0.2);
-
-  z-index:1000;
-
-}
-
-.logo{
-
-  font-size:2rem;
-  font-family:'Orbitron';
-
-}
-
-.logo span{
-
-  color:var(--cyan);
-
-}
-
-/* HERO */
-
-.hero{
-
-  min-height:100vh;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 10%;
-
-}
-
-.hero h1{
-
-  font-size:7rem;
-
-}
-
-.hero h1 span{
-
-  color:var(--cyan);
-
-  text-shadow:
-  0 0 20px cyan,
-  0 0 50px cyan;
-
-}
-
-.neon{
-
-  color:var(--magenta);
-
-  text-shadow:
-  0 0 20px magenta;
-
-}
-
-/* HOLOGRAM */
-
-.hologram{
-
-  width:400px;
-  height:500px;
-
-  border-radius:30px;
-
-  overflow:hidden;
-
-  background:rgba(255,255,255,0.03);
-
-  backdrop-filter:blur(40px);
+  background:rgba(255,255,255,0.05);
 
   border:1px solid rgba(255,255,255,0.1);
 
-  box-shadow:
-  0 0 40px cyan,
-  0 0 80px magenta;
-
-  animation:float 5s ease infinite;
-
-}
-
-.hologram img{
-
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  mix-blend-mode:screen;
-
-}
-
-@keyframes float{
-
-  50%{
-
-    transform:translateY(-20px);
-
-  }
-
-}
-
-/* DASHBOARD */
-
-.dashboard-grid{
-
-  display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
-
-  gap:30px;
-
-}
-
-.dashboard-card{
-
-  padding:40px;
+  backdrop-filter:blur(20px);
 
   border-radius:30px;
-
-  background:rgba(255,255,255,0.04);
-
-  backdrop-filter:blur(30px);
 
   transition:0.5s;
 
 }
 
-.dashboard-card:hover{
+/* HOVER */
+
+.timeline-card:hover,
+.github-card:hover,
+.blog-card:hover{
 
   transform:translateY(-10px);
 
   box-shadow:
-  0 0 40px cyan,
-  0 0 80px magenta;
+  0 0 30px cyan,
+  0 0 60px magenta;
+
+}
+
+/* TIMELINE */
+
+.timeline-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:30px;
+
+}
+
+/* GITHUB */
+
+.github-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:30px;
 
 }
 
@@ -235,6 +99,7 @@ header{
 .blog-grid{
 
   display:grid;
+
   grid-template-columns:
   repeat(auto-fit,minmax(300px,1fr));
 
@@ -242,46 +107,30 @@ header{
 
 }
 
-.blog-card{
+/* TERMINAL */
 
-  padding:30px;
+.terminal{
+
+  width:80%;
+
+  margin:auto;
+
+  background:black;
 
   border-radius:20px;
 
-  background:rgba(255,255,255,0.05);
+  overflow:hidden;
+
+  box-shadow:0 0 30px cyan;
 
 }
 
-/* TIMELINE */
+.terminal-body{
 
-.timeline3d{
+  color:lime;
 
-  display:flex;
-  gap:40px;
-  perspective:1000px;
+  font-family:monospace;
 
-}
-
-.timeline-card{
-
-  width:300px;
-  padding:40px;
-
-  border-radius:30px;
-
-  transform-style:preserve-3d;
-
-  transition:0.5s;
-
-  background:rgba(255,255,255,0.05);
-
-}
-
-.timeline-card:hover{
-
-  transform:
-  rotateY(15deg)
-  rotateX(10deg)
-  scale(1.05);
+  padding:30px;
 
 }
